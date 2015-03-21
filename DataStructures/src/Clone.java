@@ -13,14 +13,14 @@ return super.clone();
   
 public static void main(String args[]){  
 try{  
-Clone s1=new Clone(101,"amit");  
+/*Clone s1=new Clone(101,"amit");  
   
 Clone s2=(Clone)s1.clone();  
   
 System.out.println(s1.rollno+" "+s1.name);  
 System.out.println(s2.rollno+" "+s2.name);  
-  
-}catch(CloneNotSupportedException c){}  
+  */
+}catch(Exception c){}  
   
 }  
 }  

@@ -34,6 +34,5 @@ public class test {
 
 class Student{  
     int rollno;  
-    String name;  
-    String college="ITS";  
+    String name;    
 }  
