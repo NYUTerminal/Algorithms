@@ -1,6 +1,10 @@
 public class test {
 
 	public static void main(String[] args) {
+		String s = "HUNTSVILLE, AL                   30   39.8   44.3   52.3";
+		String[] parts = s.split("\\s+");
+		String textStr[] = s.split("\\r?\\n");
+		System.out.println(parts);
 		int x = 112345;
 		int[] storeDigits = new int[10];
 		int count = 0;
