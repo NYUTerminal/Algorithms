@@ -1,16 +1,20 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 class Bnode {
 
-/*	Bnode(int data) {
-		this.data = data;
-		this.llink = null;
-		this.rlink = null;
-	}*/
+	/*
+	 * Bnode(int data) { this.data = data; this.llink = null; this.rlink = null;
+	 * }
+	 */
 
 	public Bnode() {
 		// TODO Auto-generated constructor stub
 	}
 
-    int data;
+	int data;
 	Bnode llink;
 	Bnode rlink;
 
@@ -23,14 +27,17 @@ public class BTree {
 	public static void main(String[] args) {
 
 		BTree bt = new BTree();
-		bt.insertInTree(bt.root, 10);
+		bt.insertInTree(bt.root, 7);
 		bt.insertInTree(bt.root, 2);
 		bt.insertInTree(bt.root, 8);
 		bt.insertInTree(bt.root, 3);
 		bt.insertInTree(bt.root, 5);
 		bt.insertInTree(bt.root, 1);
-		bt.inOrderTraversal(bt.root);
-		bt.haveSum(bt.root, 13);
+		bt.insertInTree(bt.root, 10);
+		bt.insertInTree(bt.root, 9);
+		// bt.inOrderTraversal(bt.root);
+		bt.breadthFirstSearch(bt.root);
+		// bt.haveSum(bt.root, 13);
 	}
 
 	public void insertInTree(Bnode temp, int data) {
@@ -78,14 +85,49 @@ public class BTree {
 	}
 
 	public void haveSum(Bnode root, int sum) {
-		if (root == null){
+		if (root == null) {
 			return;
 		}
 		haveSum(root.llink, sum - root.data);
-		if(sum - root.data==0){
+		if (sum - root.data == 0) {
 			System.out.println("sum exists");
 		}
 		haveSum(root.rlink, sum - root.data);
 	}
 
+	private void breadthFirstSearch(Bnode root) {
+		if (root == null) {
+			return;
+		}
+		Queue<Bnode> q = new LinkedList<Bnode>();
+		List<Bnode> l = new ArrayList<Bnode>();
+		q.add(root);
+		Bnode b = new Bnode();
+		b.data = -1;
+		q.add(b);
+		while (q.peek() != null) {
+			Bnode currentNode = q.poll();
+			if (currentNode.data == -1) {
+				printList(l);
+				l = new ArrayList<Bnode>();
+				q.add(b);
+				continue;
+			}
+			if (currentNode.llink != null)
+				q.add(currentNode.llink);
+			if (currentNode.rlink != null)
+				q.add(currentNode.rlink);
+			l.add(currentNode);
+		}
+	}
+
+	private static void printList(List<Bnode> l) {
+		if (l.isEmpty())
+			return;
+		StringBuffer sb = new StringBuffer();
+		for (Bnode n : l) {
+			sb.append(n.data + "");
+		}
+		System.out.println(sb.toString());
+	}
 }

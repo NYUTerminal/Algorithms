@@ -177,7 +177,7 @@ public class LinkedList {
 					temp.link = temp.link.link;
 					return;
 				} else if (temp.link == null) {
-					//wont work
+					// wont work
 					temp = null;
 					return;
 				}
