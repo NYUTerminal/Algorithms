@@ -1,5 +1,9 @@
 package leetcode;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Yahoo {
 
@@ -10,8 +14,17 @@ public class Yahoo {
 //		System.out.println(new Yahoo().numberOfProblemsToSolve(Integer.valueOf(split[0]), Integer.valueOf(split[1]),
 //				Integer.valueOf(split[2])));
 //		
-		int[] arr = {2,3,10,2,4,8,1};
-		System.out.println(new Yahoo().maxDifference(arr));
+//		int[] arr = {2,3,10,2,4,8,1};
+//		System.out.println(new Yahoo().maxDifference(arr));
+//		Queue<String> queue = new LinkedList<String>();
+//		Stack<String> stack = new Stack<String>();
+//		stack.push("sol");
+//		stack.pop();
+//		HashMap<String,Integer> map = new HashMap<String,Integer>();
+		int low = 0 ;
+		int high = 10;
+		int rand = low + (int)(Math.random()*(high-low));
+		System.out.println(rand);
 	}
 
 	private int numberOfProblemsToSolve(int A, int K, int P) {
