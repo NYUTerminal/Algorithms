@@ -32,7 +32,6 @@ public class LRU {
 
 	public static void main(String[] args) {
 		Queue<Integer> pq = new PriorityQueue<Integer>(new Comparator<Integer>() {
-
 			@Override
 			public int compare(Integer i, Integer j) {
 				if (i > j) {
@@ -43,7 +42,6 @@ public class LRU {
 					return 0;
 				}
 			}
-
 		});
 		pq.add(5);
 		pq.add(4);
