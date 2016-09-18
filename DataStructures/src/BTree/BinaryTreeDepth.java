@@ -8,12 +8,7 @@ public class BinaryTreeDepth {
 	}
 
 	private int depth(BNode root) {
-		if (root == null) {
-			return 0;
-		}
-		return Math.max(depth(root.left), depth(root.right)) + 1;
+		return root == null ? 0 : Math.max(depth(root.left), depth(root.right)) + 1;
 	}
 
 }
-
-

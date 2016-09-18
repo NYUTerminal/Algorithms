@@ -1,6 +1,8 @@
-package leetcode;
+package BTree;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import leetcode.TreeNode;
 
 public class DeSerializeBT {
 	
